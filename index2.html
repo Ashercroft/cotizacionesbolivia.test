@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <title>Cotización del dólar en Bolivia (USDT/USDC) | CotizacionesBolivia.com</title>
+    <meta name="description" content="Cotiza el dólar en Bolivia con referencia P2P: USDT y USDC frente al boliviano. Calculadora rápida en CotizacionesBolivia.com.">
+    <meta name="keywords" content="dólar Bolivia, cotización dólar, tipo de cambio, USDT, USDC, P2P, boliviano">
+    <meta property="og:title" content="Cotización del dólar en Bolivia (USDT/USDC)">
+    <meta property="og:description" content="Cotiza el dólar en Bolivia con referencia P2P: USDT y USDC frente al boliviano.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_BO">
+    <meta property="og:site_name" content="CotizacionesBolivia.com">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Cotización del dólar en Bolivia (USDT/USDC)">
+    <meta name="twitter:description" content="Cotiza el dólar en Bolivia con referencia P2P: USDT y USDC frente al boliviano.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" as="style" href="fonts/fontawesome.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome.min.css" media="print" onload="this.media='all'">
+
+    <style>
+        :root {
+            --primary-dark: #003a41;
+            --primary: #179486;
+            --accent: #DE9E35;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+            --container-bg: #2C3E50;
+            --border-color: rgba(255, 255, 255, 0.12);
+            --muted: rgba(255, 255, 255, 0.65);
+            --muted-strong: rgba(255, 255, 255, 0.85);
+            --shadow: rgba(0, 0, 0, 0.35);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 15px;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+
+        body {
+            margin: 0;
+            display: block;
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, sans-serif;
+            line-height: 1.5;
+            background-color: #142523;
+            background-image:
+                radial-gradient(900px 420px at 12% -10%, rgba(23, 148, 134, 0.12), transparent 60%),
+                radial-gradient(700px 360px at 88% 0%, rgba(0, 58, 65, 0.32), transparent 60%),
+                repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 3px);
+            color: var(--text-color);
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), transparent 60%);
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: rgba(10, 24, 23, 0.9);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand img {
+            width: 28px;
+            height: 28px;
+            display: block;
+        }
+
+        .logo img {
+            width: 52px;
+            height: 52px;
+            display: block;
+        }
+
+        .title {
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            color: var(--text-light);
+            text-align: left;
+            margin: 0;
+        }
+
+        .menu-button {
+            background: linear-gradient(180deg, rgba(38, 54, 52, 0.92), rgba(16, 28, 27, 0.92));
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: var(--text-light);
+            font-size: 1rem;
+            border-radius: 6px;
+            padding: 6px 10px;
+            cursor: pointer;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+            transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+        }
+
+        .menu-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.4);
+        }
+
+        .menu-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+        }
+        main.app {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 18px 18px 40px;
+            gap: 24px;
+            min-height: calc(100vh - 70px);
+            justify-content: center;
+        }
+
+        body[data-quote-state="quote_ready"] main.app,
+        body[data-quote-state="cooldown_active"] main.app {
+            justify-content: flex-start;
+        }
+
+        .input-stage {
+            width: min(560px, 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 14px;
+            padding-top: 0;
+            transition: transform 220ms ease, opacity 220ms ease;
+        }
+
+        body[data-quote-state="quote_ready"] .input-stage,
+        body[data-quote-state="cooldown_active"] .input-stage {
+            transform: translateY(-24px) scale(0.98);
+            padding-top: 0;
+        }
+
+        body[data-quote-state="quote_ready"] .input-stage .cta,
+        body[data-quote-state="cooldown_active"] .input-stage .cta {
+            transform: scale(0.98);
+        }
+
+        .input-card {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            padding: 0;
+            border-radius: 10px;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        body[data-quote-state="quote_ready"] .input-card,
+        body[data-quote-state="cooldown_active"] .input-card {
+            padding: 16px;
+            background: linear-gradient(180deg, rgba(34, 52, 51, 0.95), rgba(26, 41, 40, 0.95));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 14px 26px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        }
+
+        .amount-field {
+            position: relative;
+            width: 100%;
+        }
+
+        .amount-input {
+            width: 100%;
+            padding: 18px 110px 18px 18px;
+            font-size: 1.6rem;
+            font-weight: 600;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(19, 32, 31, 0.8);
+            color: var(--text-light);
+            outline: none;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .amount-input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 400;
+        }
+
+        .currency-suffix {
+            position: absolute;
+            right: 52px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.95rem;
+            color: var(--muted);
+            pointer-events: none;
+        }
+
+        .provider-indicator {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: transparent;
+            padding: 0;
+            cursor: pointer;
+            opacity: 0.55;
+        }
+
+        .provider-indicator svg {
+            width: 20px;
+            height: 20px;
+            display: block;
+            fill: var(--accent);
+        }
+
+        .provider-indicator:focus-visible::after,
+        .provider-indicator:hover::after {
+            opacity: 1;
+            transform: translate(-50%, -6px);
+        }
+
+        .provider-indicator::after {
+            content: attr(data-tooltip) "\A" attr(data-subtooltip);
+            position: absolute;
+            left: 50%;
+            bottom: 28px;
+            transform: translate(-50%, 4px);
+            background: rgba(0, 0, 0, 0.78);
+            color: var(--text-light);
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            white-space: pre-line;
+            opacity: 0;
+            transition: opacity 180ms ease, transform 180ms ease;
+            pointer-events: none;
+        }
+
+        .destination-selector {
+            align-self: center;
+            background: linear-gradient(180deg, rgba(26, 40, 39, 0.9), rgba(16, 28, 27, 0.92));
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: var(--muted-strong);
+            font-size: 0.85rem;
+            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: 16px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.32);
+            transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+        }
+
+        .destination-selector:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.38);
+        }
+
+        .destination-selector:active {
+            transform: translateY(1px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.32);
+        }
+
+        .direction-toggle {
+            display: none;
+            gap: 10px;
+        }
+
+        .direction-button {
+            flex: 1;
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: linear-gradient(180deg, rgba(26, 40, 39, 0.9), rgba(18, 30, 29, 0.92));
+            color: var(--muted-strong);
+            font-size: 0.8rem;
+            cursor: pointer;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.32);
+            transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
+        }
+
+        .direction-button.active {
+            border-color: rgba(222, 158, 53, 0.5);
+            color: var(--accent);
+            background: rgba(27, 40, 39, 0.9);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.38);
+        }
+
+        .direction-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.38);
+        }
+
+        .direction-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.32);
+        }
+
+        .verified-toggle-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 12px;
+            padding: 0 12px;
+        }
+
+        .verified-toggle {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 44px;
+            height: 26px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 13px;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            transition: background-color 300ms ease;
+            flex-shrink: 0;
+        }
+
+        .verified-toggle::after {
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background-color: white;
+            top: 2px;
+            left: 2px;
+            transition: left 300ms ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .verified-toggle:checked {
+            background-color: var(--accent);
+        }
+
+        .verified-toggle:checked::after {
+            left: 20px;
+        }
+
+        .verified-toggle:hover {
+            opacity: 0.85;
+        }
+
+        .verified-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--muted-strong);
+            user-select: none;
+        }
+
+        .verified-toggle-label:hover {
+            color: var(--text-light);
+        }
+
+        .single-offer-toggle-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 12px;
+            padding: 0 12px;
+        }
+
+        .single-offer-toggle {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 44px;
+            height: 26px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 13px;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            transition: background-color 300ms ease;
+            flex-shrink: 0;
+        }
+
+        .single-offer-toggle::after {
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background-color: white;
+            top: 2px;
+            left: 2px;
+            transition: left 300ms ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .single-offer-toggle:checked {
+            background-color: var(--accent);
+        }
+
+        .single-offer-toggle:checked::after {
+            left: 20px;
+        }
+
+        .single-offer-toggle:hover {
+            opacity: 0.85;
+        }
+
+        .single-offer-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--muted-strong);
+            user-select: none;
+        }
+
+        .single-offer-toggle-label:hover {
+            color: var(--text-light);
+        }
+
+        .provider-pill {
+            display: none;
+            align-self: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(18, 30, 29, 0.85);
+            color: var(--muted-strong);
+            font-size: 0.8rem;
+        }
+
+        .provider-pill svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--accent);
+        }
+
+        .cta {
+            width: 100%;
+            padding: 16px 18px;
+            border-radius: 8px;
+            border: none;
+            background: linear-gradient(180deg, #f0c355 0%, #d79a2e 100%);
+            color: #1c1a12;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 200ms ease, box-shadow 160ms ease;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.38);
+        }
+
+        .cta:hover:not(:disabled) {
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.42);
+        }
+
+        .cta:active:not(:disabled) {
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+        }
+
+        .cta:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .cta-subtext {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .result-stage {
+            width: min(620px, 100%);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+            transition: opacity 220ms ease, transform 220ms ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        body[data-quote-state="quote_ready"] .result-stage,
+        body[data-quote-state="cooldown_active"] .result-stage {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+            max-height: 2000px;
+        }
+
+        .stale-banner {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 18px 24px;
+            padding-bottom: max(18px, env(safe-area-inset-bottom));
+            background: linear-gradient(to top, 
+                rgba(108, 84, 30, 0.98) 0%, 
+                rgba(108, 84, 30, 0.92) 60%, 
+                rgba(108, 84, 30, 0.70) 90%, 
+                rgba(108, 84, 30, 0) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: none;
+            border-top: 1px solid rgba(222, 158, 53, 0.5);
+            color: var(--text-light);
+            z-index: 9999;
+            box-shadow: 0 -6px 32px rgba(0, 0, 0, 0.45);
+        }
+
+        body[data-stale="true"] .stale-banner {
+            display: flex;
+        }
+
+        .stale-banner button {
+            border: 1px solid rgba(222, 158, 53, 0.4);
+            background: linear-gradient(180deg, rgba(26, 40, 39, 0.9), rgba(18, 30, 29, 0.92));
+            color: var(--text-light);
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.32);
+            transition: transform 160ms ease, box-shadow 160ms ease;
+        }
+
+        .stale-banner button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.38);
+        }
+
+        .stale-banner button:active {
+            transform: translateY(1px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.32);
+        }
+
+        .result-summary {
+            padding: 18px 18px 16px;
+            border-radius: 10px;
+            background: rgba(29, 45, 43, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 14px 26px rgba(0, 0, 0, 0.35);
+        }
+
+        .summary-amount {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            font-variant-numeric: tabular-nums;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .summary-amount .approx {
+            font-size: 1.3rem;
+            color: var(--accent);
+        }
+
+        .summary-line {
+            margin-top: 6px;
+            color: var(--muted-strong);
+            font-size: 0.95rem;
+        }
+
+        .summary-meta {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 16px;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .summary-warning {
+            margin-top: 8px;
+            font-size: 0.85rem;
+            color: var(--accent);
+        }
+
+        .offers-list-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .offers-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .offers-list li {
+            font-size: 0.85rem;
+            color: var(--muted-strong);
+        }
+
+        .offers-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .offers-control-btn {
+            background: transparent;
+            border: 1px solid rgba(222, 158, 53, 0.3);
+            color: var(--accent);
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 160ms ease;
+        }
+
+        .offers-control-btn:hover:not(:disabled) {
+            border-color: rgba(222, 158, 53, 0.6);
+            background: rgba(222, 158, 53, 0.1);
+        }
+
+        .offers-control-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .advanced-toggle {
+            align-self: flex-start;
+            background: transparent;
+            border: none;
+            color: var(--accent);
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .advanced-panel {
+            display: none;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        body[data-advanced-open="true"] .advanced-panel {
+            display: flex;
+        }
+
+        .advanced-message {
+            font-size: 0.85rem;
+            color: var(--accent);
+        }
+
+        .accordion-section {
+            background: rgba(24, 38, 37, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 12px 14px;
+        }
+
+        .accordion-section h3 {
+            margin: 0 0 6px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .accordion-section p,
+        .accordion-section li,
+        .accordion-section table {
+            font-size: 0.85rem;
+            color: var(--muted-strong);
+        }
+
+        .offers-list {
+            margin: 8px 0 0;
+            padding-left: 16px;
+        }
+
+        .other-quotes-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 6px;
+        }
+
+        .other-quotes-table th,
+        .other-quotes-table td {
+            text-align: left;
+            padding: 6px 4px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.8rem;
+        }
+
+        .snapshot-unavailable {
+            display: none;
+            padding: 14px;
+            border-radius: 10px;
+            background: rgba(24, 38, 37, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--muted-strong);
+            font-size: 0.9rem;
+        }
+
+        body[data-snapshot-state="snapshot_unavailable"] .snapshot-unavailable {
+            display: block;
+        }
+
+        body[data-snapshot-state="snapshot_unavailable"] .cta {
+            opacity: 0.4;
+        }
+
+        .snapshot-actions {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .snapshot-actions button {
+            border: 1px solid rgba(222, 158, 53, 0.35);
+            background: linear-gradient(180deg, rgba(26, 40, 39, 0.9), rgba(18, 30, 29, 0.92));
+            color: var(--text-light);
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.32);
+            transition: transform 160ms ease, box-shadow 160ms ease;
+        }
+
+        .snapshot-actions button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.38);
+        }
+
+        .snapshot-actions button:active {
+            transform: translateY(1px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.32);
+        }
+
+        .bottom-sheet {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 200ms ease;
+            z-index: 10;
+        }
+
+        .bottom-sheet .sheet-backdrop {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        .bottom-sheet .sheet {
+            background: rgba(10, 24, 23, 0.98);
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            padding: 16px;
+            transform: translateY(100%);
+            transition: transform 220ms ease;
+            border-top: 1px solid rgba(222, 158, 53, 0.2);
+        }
+
+        .bottom-sheet .sheet h4 {
+            margin: 0 0 12px;
+            font-size: 0.95rem;
+        }
+
+        .sheet-options {
+            display: grid;
+            gap: 10px;
+        }
+
+        .sheet-options button {
+            background: linear-gradient(180deg, rgba(44, 62, 80, 0.95), rgba(32, 48, 64, 0.95));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            border-radius: 8px;
+            padding: 10px 12px;
+            text-align: left;
+            cursor: pointer;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.32);
+            transition: transform 160ms ease, box-shadow 160ms ease;
+        }
+
+        .sheet-options button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.38);
+        }
+
+        .sheet-options button:active {
+            transform: translateY(1px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.32);
+        }
+        body[data-sheet-open="true"] .bottom-sheet {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        body[data-sheet-open="true"] .bottom-sheet .sheet {
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+            }
+
+            .input-stage,
+            .result-stage,
+            .bottom-sheet .sheet {
+                transform: none !important;
+            }
+        }
+
+        body.reduce-motion * {
+            transition: none !important;
+        }
+
+        body.reduce-motion .input-stage,
+        body.reduce-motion .result-stage,
+        body.reduce-motion .bottom-sheet .sheet {
+            transform: none !important;
+        }
+
+        @media (max-width: 520px) {
+            .logo img {
+                width: 44px;
+                height: 44px;
+            }
+
+            .title {
+                font-size: 0.88rem;
+            }
+
+            .amount-input {
+                font-size: 1.4rem;
+                padding-right: 96px;
+            }
+        }
+
+        body[data-quote-state="quote_ready"] .direction-toggle,
+        body[data-quote-state="cooldown_active"] .direction-toggle,
+        body[data-quote-state="quote_ready"] .verified-toggle-wrapper,
+        body[data-quote-state="cooldown_active"] .verified-toggle-wrapper,
+        body[data-quote-state="quote_ready"] .provider-pill,
+        body[data-quote-state="cooldown_active"] .provider-pill {
+            display: flex;
+        }
+    </style>
+</head>
+<body data-snapshot-state="loading_snapshot" data-quote-state="idle" data-stale="false" data-advanced-open="false" data-sheet-open="false">
+    <header>
+        <div class="logo">
+            <a href="index.html" aria-label="Cotizaciones Bolivia Logo - Ir a la página principal">
+                <img src="images/logo.svg" alt="Cotizaciones Bolivia">
+            </a>
+        </div>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="precios_cryptomonedas.html">Cryptomonedas</a></li>
+                <li><a href="grafico.html">Gráfico <i class="fas fa-chart-line" aria-hidden="true"></i></a></li>
+                <li><a href="guias.html">Guías <i class="fas fa-book-open" aria-hidden="true"></i></a></li>
+                <li><a href="terminos_y_condiciones.html">Términos y Condiciones</a></li>
+                <li>
+                    <button id="darkModeBtn" class="dark-mode-btn" aria-label="Cambiar a modo oscuro">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                        Modo oscuro
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="app" aria-live="polite">
+        <section class="input-stage" aria-label="Ingreso de monto para cotización del dólar">
+            <div class="input-card">
+                <p class="sr-only">Cotiza el dólar en Bolivia con referencia P2P: USDT y USDC frente al boliviano.</p>
+                <div class="amount-field">
+                    <input
+                        id="amount-input"
+                        class="amount-input"
+                        type="text"
+                        inputmode="decimal"
+                        autocomplete="off"
+                        placeholder="Ingresa un monto..."
+                        aria-label="Monto a cotizar"
+                    >
+                    <span id="source-currency" class="currency-suffix">Bs.</span>
+                    <button class="provider-indicator" id="provider-indicator" type="button" data-tooltip="Binance · P2P" data-subtooltip="Estimación por liquidez" aria-label="Binance P2P">
+                        <svg viewBox="0 0 96 96" role="img" aria-hidden="true">
+                            <path d="M48 12 60.8 24.8 48 37.6 35.2 24.8 48 12Zm25.6 25.6 12.8 12.8-12.8 12.8-12.8-12.8 12.8-12.8ZM48 44.8 60.8 57.6 48 70.4 35.2 57.6 48 44.8Zm-25.6-7.2 12.8 12.8-12.8 12.8L9.6 50.4l12.8-12.8Z"/>
+                            <path d="M48 30.4 67.6 50 48 69.6 28.4 50 48 30.4Zm0 12.8L40.8 50 48 57.2 55.2 50 48 43.2Z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <button id="destination-selector" class="destination-selector" type="button">
+                    Recibir: <span id="dest-currency">USDT</span> ▾
+                </button>
+
+                <div class="direction-toggle" id="direction-toggle" role="group" aria-label="Dirección de cotización del dólar">
+                    <button type="button" class="direction-button" data-destination="USDT">Bs. -> USDT</button>
+                    <button type="button" class="direction-button" data-destination="Bs.">USDT -> Bs.</button>
+                </div>
+
+                <div class="provider-pill" aria-label="Proveedor actual">
+                    <svg viewBox="0 0 96 96" role="img" aria-hidden="true">
+                        <path d="M48 12 60.8 24.8 48 37.6 35.2 24.8 48 12Zm25.6 25.6 12.8 12.8-12.8 12.8-12.8-12.8 12.8-12.8ZM48 44.8 60.8 57.6 48 70.4 35.2 57.6 48 44.8Zm-25.6-7.2 12.8 12.8-12.8 12.8L9.6 50.4l12.8-12.8Z"/>
+                        <path d="M48 30.4 67.6 50 48 69.6 28.4 50 48 30.4Zm0 12.8L40.8 50 48 57.2 55.2 50 48 43.2Z"/>
+                    </svg>
+                    Binance · P2P
+                </div>
+
+                <button id="quote-button" class="cta" type="button">
+                    <span id="quote-button-text">Cotizar</span>
+                </button>
+                <div id="cooldown-hint" class="cta-subtext">1 cotización de dólar cada 20 s</div>
+
+                <div id="snapshot-unavailable" class="snapshot-unavailable" role="status">
+                    Datos no disponibles en este momento.
+                    <table class="other-quotes-table" aria-label="Otras cotizaciones del dólar">
+                        <thead>
+                            <tr>
+                                <th>Plataforma</th>
+                                <th>Método</th>
+                                <th>Tasa</th>
+                                <th>Actualizado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="snapshot-actions">
+                        <button id="retry-button" type="button">Reintentar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="result-stage" class="result-stage" aria-label="Resultado de cotización del dólar">
+            <div id="stale-banner" class="stale-banner" role="status">
+                <span>Nuevas cotizaciones disponibles, Actualiza para una mejor estimación</span>
+                <button id="stale-action" type="button">Actualizar</button>
+            </div>
+
+            <div class="toggles-container" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px;">
+                <div class="verified-toggle-wrapper">
+                    <input 
+                        id="verified-toggle" 
+                        class="verified-toggle" 
+                        type="checkbox" 
+                        checked
+                        aria-label="Mostrar solo comerciantes verificados"
+                    >
+                    <label for="verified-toggle" class="verified-toggle-label">
+                        Solo comerciantes verificados
+                    </label>
+                </div>
+
+                <div class="single-offer-toggle-wrapper">
+                    <input 
+                        id="single-offer-toggle" 
+                        class="single-offer-toggle" 
+                        type="checkbox" 
+                        aria-label="Cotizar desde una sola oferta"
+                    >
+                    <label for="single-offer-toggle" class="single-offer-toggle-label">
+                        Cotizar una sola oferta
+                    </label>
+                </div>
+            </div>
+
+            <div class="result-summary">
+                <div class="summary-amount"><span class="approx">≈</span> <span id="output-amount">--</span> <span id="partial-fill-badge" hidden style="color: var(--accent); font-size: 0.8rem;">Llenado parcial</span></div>
+                <div id="remaining-amount" class="summary-line" hidden>No se pudo llenar: --</div>
+                <div id="effective-rate" class="summary-line">Cotización efectiva: --</div>
+                <div class="summary-meta">
+                    <span id="offers-count">Este intercambio tomaría -- ofertas P2P</span>
+                    <span id="snapshot-age">Actualizado hace --</span>
+                </div>
+                <div id="partial-fill" class="summary-warning" hidden>Posible llenado parcial para montos elevados.</div>
+                <div class="summary-line">Otras cotizaciones del dólar pueden diferir</div>
+            </div>
+
+            <button id="advanced-toggle" class="advanced-toggle" type="button" aria-expanded="false">Avanzado</button>
+            <div id="advanced-panel" class="advanced-panel">
+                <div id="advanced-message" class="advanced-message" hidden>Monto elevado: mostrando más detalle.</div>
+
+                <div class="accordion-section">
+                    <h3>Ruta y método</h3>
+                    <p>Dólar digital en Binance P2P (USDT, estimación de profundidad). Otras plataformas pueden usar USDC.</p>
+                </div>
+
+                <div class="accordion-section">
+                    <h3>Detalles de liquidez</h3>
+                    <p id="liquidity-line">Este intercambio tomaría -- ofertas P2P</p>
+                    <p id="liquidity-partial" hidden>Posible llenado parcial para montos elevados.</p>
+                    <div class="offers-list-container">
+                        <ul id="offers-list" class="offers-list"></ul>
+                        <div class="offers-controls" id="offers-controls" hidden>
+                            <button id="offers-collapse-btn" class="offers-control-btn" type="button" aria-label="Colapsar ofertas">↑ Colapsar</button>
+                            <button id="offers-expand-btn" class="offers-control-btn" type="button" aria-label="Expandir ofertas">↓ Más ofertas</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-section">
+                    <h3>Otras cotizaciones del dólar</h3>
+                    <table id="other-quotes-table" class="other-quotes-table">
+                        <thead>
+                            <tr>
+                                <th>Plataforma</th>
+                                <th>Método</th>
+                                <th>Tasa</th>
+                                <th>Actualizado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                                <td>--</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="accordion-section">
+                    <h3>Snapshot y notas</h3>
+                    <p id="snapshot-details">Edad: -- | TTL: -- | Estimación</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="currency-sheet" class="bottom-sheet" aria-hidden="true">
+        <div class="sheet-backdrop" data-sheet-close></div>
+        <div class="sheet" role="dialog" aria-label="Seleccionar moneda">
+            <h4>Recibir</h4>
+            <div class="sheet-options">
+                <button type="button" data-currency="USDT" data-label="USDT">USDT</button>
+                <button type="button" data-currency="Bs." data-label="Bs.">Bs.</button>
+                <button type="button" data-currency="BRL" data-label="Real Brasileño">Real (BRL)</button>
+                <button type="button" data-currency="CNY" data-label="Yuan Chino">Yuan (CNY)</button>
+                <button type="button" data-currency="ARS" data-label="Peso argentino">Peso argentino (ARS)</button>
+                <button type="button" data-currency="PEN" data-label="Sol Peruano">Sol (PEN)</button>
+                <button type="button" data-currency="CLP" data-label="Peso chileno">Peso chileno (CLP)</button>
+                <button type="button" data-currency="EUR" data-label="Euro">Euro (EUR)</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="darkMode.js"></script>
+    <script type="module">
+        import { createMarketContextClient } from './market-context-client.js';
+        import { QuoteEngine } from './quote-engine.js';
+        import { createIntentLogger } from './intent-logger.js';
+        import { fetchConversionRate } from './binance-rates.js';
+        (() => {
+            const body = document.body;
+            const amountInput = document.getElementById('amount-input');
+            const destSelector = document.getElementById('destination-selector');
+                const destCurrencyEl = document.getElementById('dest-currency');
+                const sourceCurrencyEl = document.getElementById('source-currency');
+            const quoteButton = document.getElementById('quote-button');
+            const verifiedToggle = document.getElementById('verified-toggle');
+            const singleOfferToggle = document.getElementById('single-offer-toggle');
+            const quoteButtonText = document.getElementById('quote-button-text');
+            const cooldownHint = document.getElementById('cooldown-hint');
+            const outputAmount = document.getElementById('output-amount');
+            const effectiveRate = document.getElementById('effective-rate');
+            const offersCount = document.getElementById('offers-count');
+            const snapshotAge = document.getElementById('snapshot-age');
+            const partialFill = document.getElementById('partial-fill');
+            const partialFillBadge = document.getElementById('partial-fill-badge');
+            const remainingAmount = document.getElementById('remaining-amount');
+            const liquidityLine = document.getElementById('liquidity-line');
+            const liquidityPartial = document.getElementById('liquidity-partial');
+            const offersList = document.getElementById('offers-list');
+            const snapshotDetails = document.getElementById('snapshot-details');
+            const advancedToggle = document.getElementById('advanced-toggle');
+            const advancedMessage = document.getElementById('advanced-message');
+            const staleAction = document.getElementById('stale-action');
+            const retryButton = document.getElementById('retry-button');
+            const currencySheet = document.getElementById('currency-sheet');
+            const sheetOptions = currencySheet.querySelectorAll('[data-currency]');
+            const sheetCloseTargets = currencySheet.querySelectorAll('[data-sheet-close]');
+            const otherQuotesTable = document.getElementById('other-quotes-table');
+            const otherQuotesBody = otherQuotesTable ? otherQuotesTable.querySelector('tbody') : null;
+            const directionButtons = document.querySelectorAll('.direction-button');
+            const offersControls = document.getElementById('offers-controls');
+            const offersCollapseBtn = document.getElementById('offers-collapse-btn');
+            const offersExpandBtn = document.getElementById('offers-expand-btn');
+
+            const providerId = 'binance';
+            const methodId = 'p2p';
+            const pairKey = 'USDT/BOB';
+            const cooldownMs = 20000;
+            const highAmountThreshold = 50000;
+            const marketContextClient = createMarketContextClient({ url: '/snapshots/market_context.json' });
+            const quoteEngine = QuoteEngine;
+            const intentLogger = createIntentLogger({ 
+                url: '/api/intents', 
+                rateLimitMs: 20000,
+                onlyNewBuckets: true,
+                enabled: true 
+            });
+
+            let cooldownUntil = 0;
+            let cooldownTimer = null;
+            let quoteData = null;
+            let advancedOpen = false;
+            let autoAdvancedShown = false;
+            let destination = 'USDT';
+            let offersDisplayCount = 5;
+
+                function getSourceCurrency() {
+                    return sourceCurrencyEl.textContent.trim();
+                }
+
+                function getDestination() {
+                    return destination;
+                }
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+                (navigator.connection && navigator.connection.saveData) ||
+                (navigator.deviceMemory && navigator.deviceMemory <= 4) ||
+                (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
+
+            if (reduceMotion) {
+                body.classList.add('reduce-motion');
+            }
+
+            function setSnapshotState(state) {
+                body.dataset.snapshotState = state;
+                quoteButton.disabled = state !== 'snapshot_ready' || isCooldownActive();
+            }
+
+            function setQuoteState(state) {
+                body.dataset.quoteState = state;
+            }
+
+            function setAdvancedState(open, showMessage) {
+                advancedOpen = open;
+                body.dataset.advancedOpen = open ? 'true' : 'false';
+                advancedToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                if (showMessage) {
+                    advancedMessage.hidden = false;
+                }
+                if (open) {
+                    renderOffersList();
+                    renderOtherQuotes();
+                }
+            }
+
+            function setStaleState(isStale) {
+                body.dataset.stale = isStale ? 'true' : 'false';
+            }
+
+            function openSheet() {
+                body.dataset.sheetOpen = 'true';
+                currencySheet.setAttribute('aria-hidden', 'false');
+            }
+
+            function closeSheet() {
+                body.dataset.sheetOpen = 'false';
+                currencySheet.setAttribute('aria-hidden', 'true');
+            }
+
+            function updateCurrencies(nextDestination) {
+                destination = nextDestination;
+                destCurrencyEl.textContent = destination;
+                
+                // Only automatically toggle source if destination is USDT or Bs.
+                // For other currencies, keep source as Bs. by default
+                if (destination === 'USDT') {
+                    sourceCurrencyEl.textContent = 'Bs.';
+                } else if (destination === 'Bs.') {
+                    sourceCurrencyEl.textContent = 'USDT';
+                } else {
+                    // For other currencies, offer Bs. as source (or USDT for some flows)
+                    sourceCurrencyEl.textContent = 'Bs.';
+                }
+                
+                // Update direction buttons (only show for BOB/USDT for now)
+                directionButtons.forEach((button) => {
+                    const isActive = button.dataset.destination === destination;
+                    button.classList.toggle('active', isActive);
+                });
+            }
+
+            function parseAmount(raw) {
+                if (!raw) return null;
+                // Only allow digits and decimal point
+                const cleaned = raw.replace(/[^0-9.]/g, '');
+                const value = Number.parseFloat(cleaned);
+                return Number.isFinite(value) ? value : null;
+            }
+
+            function formatNumber(value, decimals = 2) {
+                return new Intl.NumberFormat('es-BO', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: decimals
+                }).format(value);
+            }
+
+            function formatAmount(value) {
+                if (value == null) return '--';
+                return `${formatNumber(value)} ${destination}`;
+            }
+
+            function formatRate(value) {
+                if (value == null) return '--';
+                const source = getSourceCurrency();
+                const suffix = `${destination}/${source}`;
+                return `Cotización efectiva: ${formatNumber(value, 3)} ${suffix}`;
+            }
+
+            function formatAge(seconds) {
+                if (!Number.isFinite(seconds)) return 'Actualizado hace --';
+                const minutes = Math.max(1, Math.round(seconds / 60));
+                return `Actualizado hace ${minutes}m`;
+            }
+
+            function isCooldownActive() {
+                return Date.now() < cooldownUntil;
+            }
+
+            function startCooldown() {
+                cooldownUntil = Date.now() + cooldownMs;
+                setQuoteState('cooldown_active');
+                quoteButton.disabled = true;
+                cooldownHint.style.display = 'none';
+                updateCooldownLabel();
+                cooldownTimer = window.setInterval(updateCooldownLabel, 1000);
+            }
+
+            function endCooldown() {
+                cooldownUntil = 0;
+                quoteButtonText.textContent = 'Cotizar';
+                quoteButton.disabled = body.dataset.snapshotState !== 'snapshot_ready';
+                cooldownHint.style.display = '';
+                setQuoteState('quote_ready');
+                if (cooldownTimer) {
+                    window.clearInterval(cooldownTimer);
+                    cooldownTimer = null;
+                }
+            }
+
+            function updateCooldownLabel() {
+                const remaining = Math.max(0, cooldownUntil - Date.now());
+                const seconds = Math.ceil(remaining / 1000);
+                const formatted = String(seconds).padStart(2, '0');
+                quoteButtonText.textContent = `Disponible en 00:${formatted}`;
+                if (remaining <= 0) {
+                    endCooldown();
+                }
+            }
+
+            async function resolveQuote(snapshot, amount, direction) {
+                if (!quoteEngine) return null;
+                if (typeof quoteEngine.quote !== 'function') return null;
+
+                 const sourceCurrency = getSourceCurrency();
+                 const isBsSource = sourceCurrency === 'Bs.';
+                 const isUsdtSource = sourceCurrency === 'USDT';
+                const isBsDest = destination === 'Bs.';
+                const isUsdtDest = destination === 'USDT';
+
+                // Single-leg routes (P2P only)
+                if ((isBsSource && isUsdtDest) || (isUsdtSource && isBsDest)) {
+                    return quoteEngine.quote({
+                        snapshot,
+                        amount,
+                        direction,
+                        verifiedOnly: verifiedToggle.checked,
+                        singleOfferOnly: singleOfferToggle.checked,
+                        pair: pairKey,
+                        providerId,
+                        methodId
+                    });
+                }
+
+                // Two-leg routes
+                // Route 1: Bs. -> OTHER (P2P then rate: Bs. -> USDT -> OTHER)
+                if (isBsSource && !isUsdtDest && destination !== 'Bs.') {
+                    const rate = await fetchConversionRate('USDT', destination, 3000);
+                    if (!rate) return null;
+                    return quoteEngine.quote({
+                        snapshot,
+                        amount,
+                        route: 'P2P_THEN_RATE',
+                        leg1Direction: 'BS_TO_USDT',
+                        leg1From: 'Bs.',
+                        leg1To: 'USDT',
+                        leg2Rate: rate,
+                        leg2To: destination,
+                        verifiedOnly: verifiedToggle.checked,
+                        singleOfferOnly: singleOfferToggle.checked,
+                    });
+                }
+
+                // Route 2: OTHER -> Bs. (rate then P2P: OTHER -> USDT -> Bs.)
+                if (!isBsSource && !isUsdtSource && isBsDest) {
+                    const rate = await fetchConversionRate(sourceCurrency, 'USDT', 3000);
+                    if (!rate) return null;
+                    return quoteEngine.quote({
+                        snapshot,
+                        amount,
+                        route: 'RATE_THEN_P2P',
+                        leg1Rate: rate,
+                        leg1From: sourceCurrency,
+                        leg1To: 'USDT',
+                        leg2Direction: 'USDT_TO_BS',
+                        verifiedOnly: verifiedToggle.checked,
+                        singleOfferOnly: singleOfferToggle.checked,
+                    });
+                }
+
+                // Route 3: USDT -> OTHER (rate only)
+                if (isUsdtSource && !isUsdtDest && !isBsDest) {
+                    const rate = await fetchConversionRate('USDT', destination, 3000);
+                    if (!rate) return null;
+                    // Simple rate conversion
+                    const outputAmount = amount * rate;
+                    return {
+                        outputAmount,
+                        effectiveRate: rate,
+                        offersConsumed: 1,
+                        partialFill: false,
+                        remainingAmount: 0,
+                        remainingCurrency: destination,
+                        topOffers: [`${formatNumber(rate, 4)} ${destination}/USDT`],
+                        snapshotTtlSeconds: snapshot.ttl_seconds ?? null,
+                        routeLegs: 1,
+                        routeDescription: `USDT → ${destination} (tasa Binance)`,
+                    };
+                }
+
+                // Route 4: OTHER -> USDT (rate only)
+                if (!isBsSource && !isUsdtSource && isUsdtDest) {
+                    const rate = await fetchConversionRate(sourceCurrency, 'USDT', 3000);
+                    if (!rate) return null;
+                    // Simple rate conversion
+                    const outputAmount = amount * rate;
+                    return {
+                        outputAmount,
+                        effectiveRate: rate,
+                        offersConsumed: 1,
+                        partialFill: false,
+                        remainingAmount: 0,
+                        remainingCurrency: 'USDT',
+                        topOffers: [`${formatNumber(rate, 4)}`],
+                        snapshotTtlSeconds: snapshot.ttl_seconds ?? null,
+                        routeLegs: 1,
+                        routeDescription: `${sourceCurrency} → USDT (tasa Binance)`,
+                    };
+                }
+
+                return null;
+            }
+
+            function renderOffersList() {
+                if (!quoteData || !Array.isArray(quoteData.topOffers)) return;
+                const offersToDisplay = quoteData.topOffers.slice(0, offersDisplayCount);
+                offersList.innerHTML = offersToDisplay.map((offer) => (
+                    `<li>${offer}</li>`
+                )).join('');
+                
+                // Show/hide controls based on availability
+                const hasMoreOffers = quoteData.topOffers.length > 5;
+                const canCollapse = offersDisplayCount > 5;
+                const canExpand = offersDisplayCount < quoteData.topOffers.length;
+                
+                offersControls.hidden = !hasMoreOffers;
+                offersCollapseBtn.disabled = !canCollapse;
+                offersExpandBtn.disabled = !canExpand;
+            }
+
+            function renderOtherQuotes() {
+                if (!quoteData || !Array.isArray(quoteData.otherQuotes) || !otherQuotesBody) return;
+                otherQuotesBody.innerHTML = quoteData.otherQuotes.map((entry) => (
+                    `<tr>
+                        <td>${entry.platform}</td>
+                        <td>${entry.method}</td>
+                        <td>${entry.rate}</td>
+                        <td>${entry.updated}</td>
+                    </tr>`
+                )).join('');
+            }
+
+            function applyQuoteData(data) {
+                quoteData = data;
+                outputAmount.textContent = formatAmount(data.outputAmount);
+                effectiveRate.textContent = formatRate(data.effectiveRate);
+                offersCount.textContent = `Este intercambio tomaría ${data.offersConsumed} ofertas P2P`;
+                snapshotAge.textContent = formatAge(data.snapshotAgeSeconds);
+                liquidityLine.textContent = `Este intercambio tomaría ${data.offersConsumed} ofertas P2P`;
+
+                if (data.partialFill) {
+                    partialFill.hidden = false;
+                    liquidityPartial.hidden = false;
+                    partialFillBadge.hidden = false;
+                    remainingAmount.hidden = false;
+                    const remainingCurrency = data.remainingCurrency || 'Bs.';
+                    const remaining = Number.isFinite(data.remainingAmount) ? data.remainingAmount : 0;
+                    remainingAmount.textContent = `No se pudo llenar: ${formatNumber(remaining, 2)} ${remainingCurrency}`;
+                } else {
+                    partialFill.hidden = true;
+                    liquidityPartial.hidden = true;
+                    partialFillBadge.hidden = true;
+                    remainingAmount.hidden = true;
+                }
+
+                if (advancedOpen) {
+                    renderOffersList();
+                    renderOtherQuotes();
+                } else {
+                    offersList.innerHTML = '';
+                }
+
+                const ttl = data.snapshotTtlSeconds ? `${Math.round(data.snapshotTtlSeconds / 60)}m` : '--';
+                const age = data.snapshotAgeSeconds ? `${Math.round(data.snapshotAgeSeconds / 60)}m` : '--';
+                snapshotDetails.textContent = `Edad: ${age} | TTL: ${ttl} | Estimación`;
+            }
+
+            async function initSnapshot() {
+                if (!marketContextClient || !quoteEngine) {
+                    setSnapshotState('snapshot_unavailable');
+                    return;
+                }
+
+                try {
+                    await marketContextClient.init();
+                    setSnapshotState('snapshot_ready');
+                    setStaleState(marketContextClient.isStale());
+                } catch (error) {
+                    setSnapshotState('snapshot_unavailable');
+                }
+            }
+
+            function maybeAutoOpenAdvanced(amount) {
+                if (autoAdvancedShown || amount == null) return;
+                if (amount >= highAmountThreshold) {
+                    autoAdvancedShown = true;
+                    setAdvancedState(true, true);
+                }
+            }
+
+            async function requestQuote() {
+                try {
+                    if (body.dataset.snapshotState !== 'snapshot_ready') return;
+                    if (isCooldownActive()) return;
+
+                    const amount = parseAmount(amountInput.value);
+                    if (!amount) {
+                        amountInput.focus();
+                        return;
+                    }
+
+                    setQuoteState('quoting');
+                    offersDisplayCount = 5; // Reset to initial count
+
+                    const snapshot = marketContextClient.getPairData(providerId, methodId, pairKey);
+                    const direction = destination === 'USDT' ? 'BS_TO_USDT' : 'USDT_TO_BS';
+                    const quote = await resolveQuote(snapshot, amount, direction);
+
+                    if (!quote) {
+                        setSnapshotState('snapshot_unavailable');
+                        return;
+                    }
+
+                    const snapshotAgeSeconds = marketContextClient.getSnapshotAgeSeconds();
+                    const payload = {
+                        outputAmount: quote.outputAmount,
+                        effectiveRate: quote.effectiveRate,
+                        offersConsumed: quote.offersConsumed,
+                        partialFill: quote.partialFill,
+                        topOffers: quote.topOffers,
+                        remainingAmount: quote.remainingAmount,
+                        remainingCurrency: quote.remainingCurrency,
+                        otherQuotes: quote.otherQuotes,
+                        snapshotAgeSeconds,
+                        snapshotTtlSeconds: quote.snapshotTtlSeconds
+                    };
+
+                    applyQuoteData(payload);
+                    setQuoteState('quote_ready');
+                    setStaleState(marketContextClient.isStale());
+                    startCooldown();
+                    maybeAutoOpenAdvanced(amount);
+
+                    // Log user intent (non-blocking, fire-and-forget)
+                    intentLogger.log({
+                            from: getSourceCurrency(),
+                        to: destination,
+                        amount: amount,
+                        provider: providerId,
+                        method: methodId,
+                        uiMode: advancedOpen ? 'advanced' : 'normal'
+                    }).catch(() => {
+                        // Silent fail for intent logging
+                    });
+                } catch (error) {
+                    console.error('Quote error:', error);
+                    setQuoteState('error');
+                }
+            }
+
+            async function recalculateQuote() {
+                try {
+                    if (body.dataset.snapshotState !== 'snapshot_ready') return;
+
+                    const amount = parseAmount(amountInput.value);
+                    if (!amount) return;
+
+                    offersDisplayCount = 5; // Reset to initial count
+
+                    const snapshot = marketContextClient.getPairData(providerId, methodId, pairKey);
+                    const direction = destination === 'USDT' ? 'BS_TO_USDT' : 'USDT_TO_BS';
+                    const quote = await resolveQuote(snapshot, amount, direction);
+
+                    if (!quote) return;
+
+                    const snapshotAgeSeconds = marketContextClient.getSnapshotAgeSeconds();
+                    const payload = {
+                        outputAmount: quote.outputAmount,
+                        effectiveRate: quote.effectiveRate,
+                        offersConsumed: quote.offersConsumed,
+                        partialFill: quote.partialFill,
+                        topOffers: quote.topOffers,
+                        remainingAmount: quote.remainingAmount,
+                        remainingCurrency: quote.remainingCurrency,
+                        otherQuotes: quote.otherQuotes,
+                        snapshotAgeSeconds,
+                        snapshotTtlSeconds: quote.snapshotTtlSeconds
+                    };
+
+                    applyQuoteData(payload);
+                    setStaleState(marketContextClient.isStale());
+                } catch (error) {
+                    console.error('Recalculate error:', error);
+                }
+            }
+
+            destSelector.addEventListener('click', openSheet);
+            sheetOptions.forEach((button) => {
+                button.addEventListener('click', () => {
+                    updateCurrencies(button.dataset.currency);
+                    closeSheet();
+                });
+            });
+            sheetCloseTargets.forEach((target) => target.addEventListener('click', closeSheet));
+            
+            // Restrict input to numbers and decimal point only
+            amountInput.addEventListener('input', (e) => {
+                const cleaned = e.target.value.replace(/[^0-9.]/g, '');
+                if (e.target.value !== cleaned) {
+                    e.target.value = cleaned;
+                }
+            });
+            
+            directionButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    updateCurrencies(button.dataset.destination);
+                });
+            });
+
+            singleOfferToggle.addEventListener('change', () => {
+                if (body.dataset.quoteState === 'quote_ready' || body.dataset.quoteState === 'cooldown_active') {
+                    recalculateQuote();
+                }
+            });
+
+            verifiedToggle.addEventListener('change', () => {
+                if (body.dataset.quoteState === 'quote_ready' || body.dataset.quoteState === 'cooldown_active') {
+                    recalculateQuote();
+                }
+            });
+
+            offersExpandBtn.addEventListener('click', () => {
+                offersDisplayCount = Math.min(offersDisplayCount + 10, quoteData.topOffers.length);
+                renderOffersList();
+            });
+
+            offersCollapseBtn.addEventListener('click', () => {
+                offersDisplayCount = 5;
+                renderOffersList();
+            });
+
+            quoteButton.addEventListener('click', requestQuote);
+            advancedToggle.addEventListener('click', () => setAdvancedState(!advancedOpen, false));
+            staleAction.addEventListener('click', () => window.location.reload());
+            retryButton.addEventListener('click', () => window.location.reload());
+
+            updateCurrencies(destination);
+            initSnapshot();
+        })();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

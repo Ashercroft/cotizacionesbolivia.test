@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true">
+    <!-- Background circle -->
+    <circle cx="100" cy="100" r="90" fill="#009B3A"/>
+    <!-- Inner circle -->
+    <circle cx="100" cy="100" r="80" fill="#2C3E50"/>
+    <!-- Boliviano symbol (centered) -->
+    <text x="100" y="115" font-family="Arial" font-size="40" fill="#DE9E35" text-anchor="middle" font-weight="bold">Bs</text>
+    <!-- Currency symbols (120 degrees apart, all upright) -->
+    <g transform="translate(100 100)">
+        <text x="45" y="35" font-family="Arial" font-size="25" fill="#DE9E35" text-anchor="middle" transform="rotate(0)">$</text>
+        <text x="-1" y="-48" font-family="Arial" font-size="25" fill="#DE9E35" text-anchor="middle" transform="rotate(0)">€</text>
+        <text x="-44" y="39" font-family="Arial" font-size="25" fill="#DE9E35" text-anchor="middle" transform="rotate(0)">₿</text>
+    </g>
+    <!-- Arc segments all centered at (100,100) -->
+    <path d="M160,100 A60,60 0 0,0 130,52" stroke="#DE9E35" fill="none" stroke-width="8" stroke-linecap="round" transform="rotate(0 100 100)"/>
+    <path d="M160,100 A60,60 0 0,0 130,52" stroke="#DE9E35" fill="none" stroke-width="8" stroke-linecap="round" transform="rotate(120 100 100)"/>
+    <path d="M160,100 A60,60 0 0,0 130,52" stroke="#DE9E35" fill="none" stroke-width="8" stroke-linecap="round" transform="rotate(240 100 100)"/>
+    <!-- Arrow heads back to previous position -->
+    <polygon points="120,48 130,58 137,48" fill="#DE9E35" transform="rotate(0 100 100)"/>
+    <polygon points="120,48 130,58 137,48" fill="#DE9E35" transform="rotate(120 100 100)"/>
+    <polygon points="120,48 130,58 137,48" fill="#DE9E35" transform="rotate(240 100 100)"/>
+</svg>
